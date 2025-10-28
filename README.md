@@ -31,8 +31,24 @@ LANGO is an AI-powered Chrome Extension built for the Google Chrome Built-in AI 
 - Use quick action buttons for common tasks like summarizing or translating.
 - Toggle settings for voice feedback or dark mode.
 
+# Final project structure
+lango/
+├── manifest.json
+├── src/
+│   ├── assets/
+│   │   ├── icon16.png
+│   │   └── icon128.png
+│   ├── popup/
+│   │   └── popup.html
+│   ├── sidepanel/
+│   │   ├── sidepanel.html
+│   │   ├── sidepanel.js
+│   │   └── sidepanel.css
+│   ├── background.js
+│   └── content.js
 ## Notes
 - Gemini Nano API integration is a placeholder. Update `background.js` with actual endpoints and keys.
 - Tesseract.js is included for OCR; ensure a stable internet connection for loading.
+
 
 Enjoy LANGO, your friendly AI companion! 🌷
