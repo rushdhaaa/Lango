@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "LANGO: Your Voice-Powered Chrome Companion",
+  "version": "1.0.0",
+  "description": "A voice-activated AI assistant using Gemini Nano for summarizing, translating, rewriting, and more.",
+  "icons": {
+    "16": "src/assets/icon16.png",
+    "128": "src/assets/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Open LANGO"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting",
+    "storage",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/sidepanel/sidepanel.html",
+        "src/sidepanel/sidepanel.js",
+        "src/sidepanel/sidepanel.css"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "commands": {
+    "toggle-lango": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Toggle LANGO side panel"
+    }
+  }
+}
