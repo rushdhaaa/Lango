@@ -72,7 +72,7 @@ function stopRecording() {
 // Process AI Command
 async function processCommand(command, sendResponse) {
   const { apiKey } = await chrome.storage.local.get("apiKey");
-  if (!apiKey || apiKey === "AIzaSyDkQAAnC7QqykjIjoqFfvr5pKEdAQsG2Us") {
+  if (!apiKey || apiKey === "API KEY") {
     sendResponse({ response: "Please add your Gemini API key in Settings." });
     return;
   }
@@ -100,4 +100,5 @@ chrome.commands.onCommand.addListener((command) => {
   if (command === "toggle-lango") {
     chrome.sidePanel.open({ windowId: chrome.windows.WINDOW_ID_CURRENT });
   }
+
 });
